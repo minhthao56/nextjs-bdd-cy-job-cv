@@ -1,0 +1,5 @@
+{
+  "testFiles": "**/*.{feature,features}",
+  "ignoreTestFiles": ["**/stepDefinitions/*", "*.js", "*.md", "*.test.tsx"],
+  "baseUrl": "http://localhost:3000"
+}
