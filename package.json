@@ -10,15 +10,24 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.1",
+    "clsx": "^1.1.1",
+    "js-cookie": "^3.0.1",
+    "jspdf": "^2.3.1",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.16.0"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.1",
+    "@hookform/devtools": "^4.0.1",
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
+    "@types/js-cookie": "^2.2.7",
     "@types/react": "17.0.20",
     "babel-plugin-import": "^1.13.3",
     "cypress": "^8.3.1",

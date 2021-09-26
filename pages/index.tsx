@@ -1,17 +1,26 @@
 import { FC, Fragment } from "react";
+// import { jsPDF } from "jspdf";
 import Head from "next/head";
-import { Button } from "@src/components/Button";
+import { Button } from "@src/components";
 
 const Home: FC = () => {
+  console.log("env", process.env.HOST);
+
+  const gener = () => {
+    // const doc = new jsPDF("p", "pt", "a4");
+    // doc.f(document.body, function (pdf) {
+    //   pdf.save("web.pdf");
+    // });
+  };
+
   return (
     <Fragment>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home Page</title>
       </Head>
-      <div>
+      <div id="text">
         <h1>Home Page</h1>
-        <Button>TEST</Button>
+        <Button onClick={gener}>TEST</Button>
       </div>
     </Fragment>
   );
