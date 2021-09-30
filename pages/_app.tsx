@@ -4,6 +4,9 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
+import { appWithTranslation } from "next-i18next";
+import nextI18NextConfig from "../next-i18next.config.js";
+
 import theme from "@styles/theme";
 import createEmotionCache from "@styles/createEmotionCache";
 import Container from "@mui/material/Container";
@@ -16,7 +19,7 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
-export default function MyApp(props: MyAppProps) {
+function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
     <CacheProvider value={emotionCache}>
@@ -32,8 +35,8 @@ export default function MyApp(props: MyAppProps) {
             <Component {...pageProps} />
           </Container>
         </WapperAuth>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       </ThemeProvider>
     </CacheProvider>
   );
 }
+export default appWithTranslation(MyApp, nextI18NextConfig);
