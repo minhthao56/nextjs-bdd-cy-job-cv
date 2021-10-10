@@ -9,8 +9,7 @@ import nextI18NextConfig from "../next-i18next.config.js";
 
 import theme from "@styles/theme";
 import createEmotionCache from "@styles/createEmotionCache";
-import Container from "@mui/material/Container";
-import { WapperAuth } from "@src/auth";
+import { WarperAuth } from "@src/auth";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -29,12 +28,10 @@ function MyApp(props: MyAppProps) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <ThemeProvider theme={theme}>
-        <WapperAuth>
+        <WarperAuth>
           <CssBaseline />
-          <Container>
-            <Component {...pageProps} />
-          </Container>
-        </WapperAuth>
+          <Component {...pageProps} />
+        </WarperAuth>
       </ThemeProvider>
     </CacheProvider>
   );

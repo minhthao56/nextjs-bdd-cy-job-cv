@@ -1,2 +1,2 @@
-export * from "./WapperAuth";
+export * from "./WarperAuth";
 export * from "./cookies";

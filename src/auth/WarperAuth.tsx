@@ -1,8 +1,9 @@
+import { MainLayout } from "@src/layouts";
 import { useRouter } from "next/router";
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import { getCookieFromBrowser } from "./cookies";
 
-export const WapperAuth: React.FC = ({ children }) => {
+export const WarperAuth: React.FC = ({ children }) => {
   const router = useRouter();
   const pathname = router.pathname;
 
@@ -12,8 +13,7 @@ export const WapperAuth: React.FC = ({ children }) => {
     if (!token && pathname !== "/login") {
       window.location.replace("/login");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  return <Fragment>{children}</Fragment>;
+  return <MainLayout>{children}</MainLayout>;
 };

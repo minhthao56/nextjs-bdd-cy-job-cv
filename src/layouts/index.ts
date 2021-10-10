@@ -1,2 +1,2 @@
 export * from "./BlankLayout";
-export * from "./MainPlayout";
+export * from "./MainLayout";

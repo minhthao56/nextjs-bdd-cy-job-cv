@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import nextI18NextConfig from "../next-i18next.config.js";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -7,9 +7,8 @@ import Link from "next/link";
 import { Button } from "@src/components";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
 
-const Home: FC = () => {
+const Home = () => {
   const gener = async () => {
     const res = await axios.get("api/stream-pdf", { responseType: "blob" });
     const flie = new Blob([res.data], { type: "application/pdf" });
@@ -22,11 +21,11 @@ const Home: FC = () => {
     document.body.removeChild(link);
   };
 
-  useEffect(() => {
-    axios
-      .post("api/lang", { test: "TEST" })
-      .then((res) => console.log(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .post("api/lang", { test: "TEST" })
+  //     .then((res) => console.log(res.data));
+  // }, []);
   const { t } = useTranslation("common");
 
   return (
@@ -38,7 +37,9 @@ const Home: FC = () => {
         <h1>Home Page</h1>
         <h2>{t("change-locale")}</h2>
         <Link href="/login">Login</Link>
-        <Button onClick={gener}>TEST</Button>
+        <Button onClick={gener} color="primary" variant="contained">
+          TEST
+        </Button>
       </div>
     </Fragment>
   );
@@ -52,6 +53,7 @@ export const getStaticProps = async ({ locale }: Location) => {
     props: {
       ...(await serverSideTranslations(locale, ["common"], nextI18NextConfig)),
     },
+    revalidate: 10,
   };
 };
 

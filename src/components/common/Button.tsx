@@ -1,25 +1,39 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
-import { Button as ButtonBase } from "@mui/material";
+import { Button as ButtonBase, ButtonProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { ThemeColors } from "@styles/colors";
 
-const ButtonMain = styled(ButtonBase)({
-  backgroundColor: "red",
-  color: "white",
-  fontWeight: "bold",
-  "&:hover": {
-    backgroundColor: "black",
-    color: "white",
-  },
-});
-
-interface IButton {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+interface IButton extends ButtonProps {
   type?: "button" | "submit" | "reset";
+  maxWidth?: number | string;
+  height?: number | string;
+  maxHeight?: number | string;
+  width?: number | string;
 }
-export const Button: React.FC<IButton> = ({ children, onClick, type }) => {
+export const Button: React.FC<IButton> = ({
+  children,
+  type,
+  width,
+  maxWidth,
+  height,
+  maxHeight,
+  ...rest
+}) => {
+  const ButtonMain = styled(ButtonBase)({
+    fontWeight: "bold",
+    "&:hover": {
+      backgroundColor: ThemeColors.hoverColorPrimary,
+      boxShadow: "none",
+    },
+    boxShadow: "none",
+    width,
+    maxWidth,
+    height,
+    maxHeight,
+  });
   return (
-    <ButtonMain onClick={onClick} type={type}>
+    <ButtonMain type={type} {...rest}>
       {children}
     </ButtonMain>
   );
