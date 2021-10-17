@@ -3,3 +3,6 @@ export * from "./common/Input";
 export * from "./common/Section";
 export * from "./common/Div";
 export * from "./common/Span";
+export * from "./common/Link";
+
+export * from "./app/SmallJobCard";

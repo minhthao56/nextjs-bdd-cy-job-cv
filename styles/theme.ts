@@ -15,7 +15,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    htmlFontSize: 17,
+    htmlFontSize: 17.06,
     allVariants: {
       color: "#222222",
     },
