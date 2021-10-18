@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import NextLink, { LinkProps } from "next/link";
-import { Button, Div, Span, Link } from "@src/components";
+import { Button, Div, Link } from "@src/components";
 
 const LinkMenu: React.FC<LinkProps> = ({ children, href, ...rest }) => {
   const { pathname } = useRouter();
@@ -49,10 +49,11 @@ export const Navbar = () => {
               height={19}
               alt="TD"
             />
-            <Link href="/">
-              <Span marginLeft={1} fontWeight="500">
-                NHÀ TUYỂN DỤNG
-              </Span>
+            <Link
+              nextProps={{ href: "/" }}
+              muiProps={{ marginLeft: 1, fontWeight: "500" }}
+            >
+              NHÀ TUYỂN DỤNG
             </Link>
           </Div>
 

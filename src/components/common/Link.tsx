@@ -1,11 +1,22 @@
 import React from "react";
-import NextLink, { LinkProps } from "next/link";
-import { Span } from "..";
+import NextLink, { LinkProps as NextLinkProps } from "next/link";
+import { Link as MuiLink, LinkProps as MuiLinkProps } from "@mui/material";
 
-export const Link: React.FC<LinkProps> = ({ children, ...rest }) => {
+import { styled } from "@mui/material/styles";
+
+interface Link {
+  nextProps: NextLinkProps;
+  muiProps?: MuiLinkProps;
+}
+
+const ItemMenu = styled(MuiLink)(({ theme }) => ({
+  color: "#222222",
+  textDecoration: "none",
+}));
+export const Link: React.FC<Link> = ({ children, nextProps, muiProps }) => {
   return (
-    <NextLink {...rest}>
-      <Span cursorPointer>{children}</Span>
+    <NextLink passHref {...nextProps}>
+      <ItemMenu {...muiProps}>{children}</ItemMenu>
     </NextLink>
   );
 };

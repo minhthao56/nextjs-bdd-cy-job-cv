@@ -4,4 +4,5 @@ export enum ThemeColors {
   lightGreyColor = "#888888",
   borderGreyColor = "#EAEAF0",
   extraLightGreyColor = "#FAFAFA",
+  colorDotCarrousel = "#D2DCE6",
 }
