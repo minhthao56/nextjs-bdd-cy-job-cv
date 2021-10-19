@@ -1,7 +1,7 @@
+import { Div, SmallJobCard } from "@src/components";
 import { ThemeColors } from "@styles/colors";
 import React from "react";
 import Slider from "react-slick";
-import { Div, SmallJobCard } from "..";
 
 export const CarouselBase = () => {
   return (

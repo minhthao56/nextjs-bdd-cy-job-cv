@@ -27,6 +27,24 @@ function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <style jsx global>
+        {`
+          .slick-dots.slick-thumb li {
+            width: 10px;
+            height: 10px;
+          }
+          .slick-dots.slick-thumb li.slick-active {
+            background-color: ${theme.palette.primary.main};
+            width: 10px;
+            height: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+          .slick-dots.slick-thumb li.slick-active .css-x66qqs {
+            background-color: transparent;
+          }
+        `}
+      </style>
 
       <ThemeProvider theme={theme}>
         <WarperAuth>

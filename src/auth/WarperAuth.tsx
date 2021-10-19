@@ -1,4 +1,4 @@
-import { MainLayout } from "@src/layouts";
+import { ExpandLayout } from "@src/layouts";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { getCookieFromBrowser } from "./cookies";
@@ -15,5 +15,5 @@ export const WarperAuth: React.FC = ({ children }) => {
     }
   }, [pathname]);
 
-  return <MainLayout>{children}</MainLayout>;
+  return <ExpandLayout>{children}</ExpandLayout>;
 };

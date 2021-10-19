@@ -3,6 +3,7 @@ import nextI18NextConfig from "../next-i18next.config.js";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { BannerHome } from "@src/modules";
 import { CarouselBase } from "@src/components";
 // import Link from "next/link";
 // import { Button } from "@src/components";
@@ -34,22 +35,8 @@ const Home = () => {
       <Head>
         <title>Home Page</title>
       </Head>
-      <style jsx global>
-        {`
-          .slick-dots.slick-thumb li {
-            width: 10px;
-            height: 10px;
-          }
-          .slick-dots.slick-thumb li.slick-active {
-            background-color: red;
-            width: 10px;
-            height: 10px;
-          }
-          .slick-dots.slick-thumb li.slick-active .css-x66qqs {
-            background-color: #000;
-          }
-        `}
-      </style>
+      <BannerHome />
+
       <CarouselBase />
     </Fragment>
   );

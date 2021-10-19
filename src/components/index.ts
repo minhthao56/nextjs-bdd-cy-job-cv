@@ -5,5 +5,5 @@ export * from "./common/Div";
 export * from "./common/Span";
 export * from "./common/Link";
 
-export * from "./app/SmallJobCard";
-export * from "./app/CarouselBase";
+export * from "./app/JobCard/SmallJobCard";
+export * from "./app/Carousel/CarouselBase";
