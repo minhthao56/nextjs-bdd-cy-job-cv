@@ -9,10 +9,10 @@ interface Link {
   muiProps?: MuiLinkProps;
 }
 
-const ItemMenu = styled(MuiLink)(({ theme }) => ({
+const ItemMenu = styled(MuiLink)({
   color: "#222222",
   textDecoration: "none",
-}));
+});
 export const Link: React.FC<Link> = ({ children, nextProps, muiProps }) => {
   return (
     <NextLink passHref {...nextProps}>
