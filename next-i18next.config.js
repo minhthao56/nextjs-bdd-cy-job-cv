@@ -3,6 +3,4 @@ module.exports = {
     defaultLocale: "en",
     locales: ["en", "vi"],
   },
-
-  reloadOnPrerender: true,
 };
