@@ -3,7 +3,7 @@ import Image from "next/image";
 import { styled } from "@mui/material/styles";
 
 import { ThemeColors } from "@styles/colors";
-import { Div, Span } from "@src/components";
+import { Div, Span } from "@src/components/common";
 import { Triangle } from "./Triangle";
 
 const Container = styled(Div)({

@@ -1,5 +1,5 @@
 import React from "react";
-import { InputBase } from "@mui/material";
+import { InputBase, InputProps as InputBaseProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Control, Controller, FieldValues } from "react-hook-form";
 
@@ -11,12 +11,12 @@ const MainInput = styled(InputBase)({
   marginBottom: 8,
 });
 
-interface IMainInput extends IInput {
+interface InputProps extends InputBaseProps {
   control: Control<FieldValues, object>;
   name: any;
 }
 
-export const Input: React.FC<IMainInput> = ({ placeholder, control, name }) => {
+export const Input: React.FC<InputProps> = ({ placeholder, control, name }) => {
   return (
     <Controller
       name={name}

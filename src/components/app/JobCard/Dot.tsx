@@ -1,4 +1,4 @@
-import { Div } from "@src/components";
+import { Div } from "@src/components/common";
 import { ThemeColors } from "@styles/colors";
 
 export const Dot = () => {

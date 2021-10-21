@@ -1,11 +1,10 @@
-import { CarouselBase, CarouselPages } from "@src/components";
+import { CarouselBase, CarouselPages, TitleBar } from "@src/components/app";
 import React from "react";
-import { TitleTypeJobs } from ".";
 
 export const CarouselHome = () => {
   return (
     <React.Fragment>
-      <TitleTypeJobs />
+      <TitleBar />
       <CarouselBase>
         <CarouselPages />
         <CarouselPages />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "@src/components";
+import { Button, Input } from "@src/components/common";
 import { Box } from "@mui/system";
 import { useForm } from "react-hook-form";
 import { setCookie } from "@src/auth/cookies";

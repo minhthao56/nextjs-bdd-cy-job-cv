@@ -1,23 +1,34 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
-import { Button as ButtonBase, ButtonProps } from "@mui/material";
+import {
+  Button as ButtonBase,
+  ButtonProps as MuiButtonProps,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { ThemeColors } from "@styles/colors";
 
-interface IButton extends ButtonProps {
+interface ButtonProps extends MuiButtonProps {
   type?: "button" | "submit" | "reset";
   maxWidth?: number | string;
   height?: number | string;
   maxHeight?: number | string;
   width?: number | string;
+  textTransform?:
+    | "none"
+    | "capitalize"
+    | "uppercase"
+    | "lowercase"
+    | "full-width"
+    | "full-size-kana";
 }
-export const Button: React.FC<IButton> = ({
+export const Button: React.FC<ButtonProps> = ({
   children,
   type,
   width,
   maxWidth,
   height,
   maxHeight,
+  textTransform,
   ...rest
 }) => {
   const ButtonMain = styled(ButtonBase)({
@@ -31,6 +42,7 @@ export const Button: React.FC<IButton> = ({
     maxWidth,
     height,
     maxHeight,
+    textTransform: "capitalize",
   });
   return (
     <ButtonMain type={type} {...rest}>

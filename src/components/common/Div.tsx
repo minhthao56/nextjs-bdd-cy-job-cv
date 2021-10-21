@@ -2,7 +2,7 @@ import React from "react";
 import { Box, BoxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-interface Div extends BoxProps {
+export interface DivProps extends BoxProps {
   middle?: boolean;
   center?: boolean;
   between?: boolean;
@@ -10,9 +10,10 @@ interface Div extends BoxProps {
   flexCol?: boolean;
   around?: boolean;
   backgroundColor?: string;
+  colCenter?: boolean;
 }
 
-export const Div: React.FC<Div> = ({
+export const Div: React.FC<DivProps> = ({
   children,
   middle,
   center,
@@ -21,6 +22,7 @@ export const Div: React.FC<Div> = ({
   flexCol,
   around,
   backgroundColor,
+  colCenter,
   ...rest
 }) => {
   // Check condition render styles
@@ -33,6 +35,14 @@ export const Div: React.FC<Div> = ({
 
     if (flexCol) {
       Object.assign(styles, { display: "flex", flexDirection: "column" });
+    }
+
+    if (colCenter) {
+      Object.assign(styles, {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      });
     }
 
     if (center) {

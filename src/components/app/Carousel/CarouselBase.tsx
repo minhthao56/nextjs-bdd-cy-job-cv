@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-import { Div } from "@src/components";
+import { Div } from "@src/components/common";
 import { ThemeColors } from "@styles/colors";
 
 export const CarouselBase: React.FC = ({ children }) => {
@@ -22,6 +22,7 @@ export const CarouselBase: React.FC = ({ children }) => {
         );
       }}
       dotsClass="slick-dots slick-thumb"
+      arrows={false}
     >
       {children}
     </Slider>

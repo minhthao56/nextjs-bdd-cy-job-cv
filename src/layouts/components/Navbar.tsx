@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import NextLink, { LinkProps } from "next/link";
-import { Button, Div, Link } from "@src/components";
+import { Button, Div, Link } from "@src/components/common";
 
 const LinkMenu: React.FC<LinkProps> = ({ children, href, ...rest }) => {
   const { pathname } = useRouter();

@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 import { ThemeColors } from "@styles/colors";
 import { Dot } from "./Dot";
 import { Currency } from "./Currency";
-import { Div, Span } from "@src/components";
+import { Div, Span } from "@src/components/common";
 
 const Container = styled(Div)({
   borderStyle: "solid",
