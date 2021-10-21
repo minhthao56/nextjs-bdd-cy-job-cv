@@ -37,7 +37,9 @@ const Home = () => {
         <title>Home Page</title>
       </Head>
       <BannerHome />
-      <CarouselHome />
+      <Section>
+        <CarouselHome />
+      </Section>
     </Fragment>
   );
 };
