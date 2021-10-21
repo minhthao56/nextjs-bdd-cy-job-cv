@@ -3,8 +3,7 @@ import nextI18NextConfig from "../next-i18next.config.js";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import { BannerHome } from "@src/modules";
-import { CarouselBase } from "@src/components";
+import { BannerHome, CarouselHome } from "@src/modules";
 // import Link from "next/link";
 // import { Button } from "@src/components";
 // import axios from "axios";
@@ -36,8 +35,7 @@ const Home = () => {
         <title>Home Page</title>
       </Head>
       <BannerHome />
-
-      <CarouselBase />
+      <CarouselHome />
     </Fragment>
   );
 };
@@ -50,7 +48,7 @@ export const getStaticProps = async ({ locale }: Location) => {
     props: {
       ...(await serverSideTranslations(locale, ["common"], nextI18NextConfig)),
     },
-    // revalidate: 10,
+    revalidate: 10,
   };
 };
 

@@ -1,18 +1,17 @@
-import { Div, SmallJobCard } from "@src/components";
-import { ThemeColors } from "@styles/colors";
 import React from "react";
 import Slider from "react-slick";
 
-export const CarouselBase = () => {
+import { Div } from "@src/components";
+import { ThemeColors } from "@styles/colors";
+
+export const CarouselBase: React.FC = ({ children }) => {
   return (
     <Slider
       dots={true}
       speed={500}
       slidesToShow={1}
       slidesToScroll={1}
-      customPaging={(i) => {
-        console.log({ i });
-
+      customPaging={() => {
         return (
           <Div
             height={10}
@@ -24,26 +23,7 @@ export const CarouselBase = () => {
       }}
       dotsClass="slick-dots slick-thumb"
     >
-      <div>
-        <SmallJobCard />
-        <SmallJobCard />
-        <SmallJobCard />
-      </div>
-      <div>
-        <SmallJobCard />
-        <SmallJobCard />
-        <SmallJobCard />
-      </div>
-      <div>
-        <SmallJobCard />
-        <SmallJobCard />
-        <SmallJobCard />
-      </div>
-      <div>
-        <SmallJobCard />
-        <SmallJobCard />
-        <SmallJobCard />
-      </div>
+      {children}
     </Slider>
   );
 };

@@ -6,4 +6,6 @@ export * from "./common/Span";
 export * from "./common/Link";
 
 export * from "./app/JobCard/SmallJobCard";
+
 export * from "./app/Carousel/CarouselBase";
+export * from "./app/Carousel/CarouselPages";
