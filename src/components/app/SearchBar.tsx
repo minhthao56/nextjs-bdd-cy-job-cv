@@ -9,7 +9,11 @@ export const SearchBar = () => {
   };
   return (
     <Form position="relative" onSubmit={handleSubmit(onSubmit)} zIndex={2}>
-      <Input control={control} name="search-bar" />
+      <Input
+        control={control}
+        name="search-bar"
+        placeholder="Tên công việc, vị trí bạn muốn ứng tuyển"
+      />
     </Form>
   );
 };

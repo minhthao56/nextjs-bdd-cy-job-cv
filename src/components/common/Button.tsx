@@ -20,6 +20,7 @@ interface ButtonProps extends MuiButtonProps {
     | "lowercase"
     | "full-width"
     | "full-size-kana";
+  marginLeft?: number | string;
 }
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -29,10 +30,10 @@ export const Button: React.FC<ButtonProps> = ({
   height,
   maxHeight,
   textTransform,
+  marginLeft,
   ...rest
 }) => {
   const ButtonMain = styled(ButtonBase)({
-    fontWeight: "bold",
     "&:hover": {
       backgroundColor: ThemeColors.hoverColorPrimary,
       boxShadow: "none",
@@ -43,6 +44,10 @@ export const Button: React.FC<ButtonProps> = ({
     height,
     maxHeight,
     textTransform: "capitalize",
+    display: "flex",
+    alignItems: "center",
+    fontSize: "15px",
+    marginLeft,
   });
   return (
     <ButtonMain type={type} {...rest}>

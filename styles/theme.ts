@@ -8,12 +8,13 @@ const theme = createTheme({
       main: "#0E4ECA",
     },
     secondary: {
-      main: "#19857b",
+      main: "#82B7EB",
     },
     error: {
       main: red.A400,
     },
   },
+
   typography: {
     htmlFontSize: 17.06,
     allVariants: {

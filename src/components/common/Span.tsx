@@ -6,6 +6,7 @@ interface Span extends TypographyProps {
   cursorPointer?: boolean;
   smallFont?: boolean;
   maxLine?: number;
+  opacity?: number;
 }
 
 export const Span: React.FC<Span> = ({
@@ -13,6 +14,7 @@ export const Span: React.FC<Span> = ({
   cursorPointer,
   smallFont,
   maxLine,
+  opacity,
   ...rest
 }) => {
   // Check condition render styles
@@ -33,6 +35,7 @@ export const Span: React.FC<Span> = ({
     WebkitLineClamp: maxLine || "none",
     WebkitBoxOrient: "vertical",
     overflow: "hidden",
+    opacity,
   });
 
   return <Text {...rest}>{children}</Text>;

@@ -11,6 +11,10 @@ export interface DivProps extends BoxProps {
   around?: boolean;
   backgroundColor?: string;
   colCenter?: boolean;
+  flexStartRow?: boolean;
+  flexEndRow?: boolean;
+  flexStartCol?: boolean;
+  flexEndCol?: boolean;
 }
 
 export const Div: React.FC<DivProps> = ({
@@ -23,6 +27,10 @@ export const Div: React.FC<DivProps> = ({
   around,
   backgroundColor,
   colCenter,
+  flexStartRow,
+  flexEndRow,
+  flexStartCol,
+  flexEndCol,
   ...rest
 }) => {
   // Check condition render styles
@@ -73,6 +81,41 @@ export const Div: React.FC<DivProps> = ({
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
+      };
+
+      Object.assign(styles, styleProps);
+    }
+    if (flexEndRow) {
+      const styleProps: BoxProps = {
+        display: "flex",
+        justifyContent: "flex-end",
+      };
+
+      Object.assign(styles, styleProps);
+    }
+    if (flexStartRow) {
+      const styleProps: BoxProps = {
+        display: "flex",
+        justifyContent: "flex-start",
+      };
+
+      Object.assign(styles, styleProps);
+    }
+
+    if (flexEndCol) {
+      const styleProps: BoxProps = {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+      };
+
+      Object.assign(styles, styleProps);
+    }
+    if (flexStartCol) {
+      const styleProps: BoxProps = {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
       };
 
       Object.assign(styles, styleProps);
