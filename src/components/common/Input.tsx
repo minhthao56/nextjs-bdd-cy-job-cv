@@ -8,22 +8,33 @@ const MainInput = styled(InputBase)({
   borderWidth: 1,
   borderStyle: "solid",
   paddingLeft: 6,
-  marginBottom: 8,
 });
 
 interface InputProps extends InputBaseProps {
   control: Control<FieldValues, object>;
   name: any;
+  marginBottom?: number | string;
 }
 
-export const Input: React.FC<InputProps> = ({ placeholder, control, name }) => {
+export const Input: React.FC<InputProps> = ({
+  placeholder,
+  control,
+  name,
+  marginBottom,
+}) => {
   return (
     <Controller
       name={name}
       control={control}
       defaultValue=""
       render={({ field }) => {
-        return <MainInput placeholder={placeholder} {...field} />;
+        return (
+          <MainInput
+            placeholder={placeholder}
+            {...field}
+            style={{ marginBottom }}
+          />
+        );
       }}
     />
   );
